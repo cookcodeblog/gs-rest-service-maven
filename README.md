@@ -17,7 +17,7 @@ mvn clean package -s settings.xml -U -B
 
 ```bash
 chmod u+x docker-build.sh
-./docker-build.sh demo v1
+./docker-build.sh 0.1.0
 ```
 
 ## Run Application
@@ -31,7 +31,7 @@ mvn spring-boot:run -s settings.xml
 ### Run with Docker Container
 
 ```bash
-docker run -p 8080:8080 demo:v1
+docker run -p 8080:8080 gs-rest-service:0.1.0
 
 ```
 
