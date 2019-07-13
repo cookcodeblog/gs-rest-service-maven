@@ -1,6 +1,6 @@
 FROM openjdk:8-jdk-alpine
 
-ARG jar_file=*.jar
+ARG jar_file
 ARG http_port=8080
 
 # Copy jar from current directory

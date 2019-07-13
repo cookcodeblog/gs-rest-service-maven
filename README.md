@@ -25,7 +25,7 @@ chmod u+x docker-build.sh
 ### Run SpringBoot with Maven
 
 ```bash
-mvn spring-boot:run
+mvn spring-boot:run -s settings.xml
 ```
 
 ### Run with Docker Container
@@ -34,3 +34,11 @@ mvn spring-boot:run
 docker run -p 8080:8080 demo:v1
 
 ```
+
+> Use another port if 8080 is already in use
+
+## Test Application
+
+http://192.168.87.151:8080/greeting
+
+http://192.168.87.151:8080/greeting?name=William

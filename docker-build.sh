@@ -7,6 +7,11 @@ cp Dockerfile ./docker
 cp target/*.jar ./docker
 cd ./docker
 
-IMG_NAME=$1
-IMG_VERSION=$2
-docker build -t ${IMG_NAME}:${IMG_VERSION} .
+JAR_NAME=gs-rest-service
+JAR_VERSION=$1
+JAR_FILE=${JAR_NAME}-${JAR_VERSION}.jar
+
+MG_NAME=${JAR_NAME}
+IMG_VERSION=${JAR_VERSION}
+docker build -t ${IMG_NAME}:${IMG_VERSION} --build-arg jar_file=${JAR_FILE} .
+
