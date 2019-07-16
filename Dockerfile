@@ -1,5 +1,6 @@
+# https://spring.io/guides/gs/spring-boot-docker/
 FROM openjdk:8-jdk-alpine
-
+VOLUME /tmp
 ARG jar_file
 ARG http_port=8080
 
