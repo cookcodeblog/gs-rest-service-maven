@@ -1,5 +1,8 @@
-
 # gs-rest-service-maven
+
+[![Build Status](https://drone.xdevops.cn/api/badges/cookcodeblog/gs-rest-service-maven/status.svg)](https://drone.xdevops.cn/cookcodeblog/gs-rest-service-maven)
+
+
 
 ## Local Build
 
