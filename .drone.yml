@@ -1,11 +1,10 @@
 kind: pipeline
 type: docker
-name: default
+name: ci-java8
 
 
 steps:
-  - name: greeting
-    image: alpine
+  - name: build
+    image: maven:3-jdk-8
     commands:
-      - echo Hello, Drone!
-      - echo Happy Sunday!
+      - mvn install -B -U
