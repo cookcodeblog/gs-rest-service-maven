@@ -8,6 +8,7 @@ volumes:
       path: /mnt/data/maven_local_repo
 
 
+
 steps:
   - name: build
     image: maven:3-jdk-8
