@@ -16,13 +16,14 @@ steps:
       recipients:
         - williamsrlin@outlook.com
         - williamsrlin@outlook.com
-      subject: "[{{ build.status }}] {{ repo.owner }}/{{ repo.name }} ({{ build.branch }}"
+      subject: "Drone build: [{{ build.status }}] {{ repo.owner }}/{{ repo.name }} ({{ build.branch }})"
       host: smtp.mailgun.org
       port: 587
-      from: drone@xdevops.cn
+      from: noreply@xdevops.cn
       username:
         from_secret: mail_user
       password:
         from_secret: mail_password
       when:
         status: [ success, failure ]
+
