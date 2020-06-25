@@ -14,15 +14,15 @@ steps:
     settings:
       recipients_only: true
       recipients:
-        from_secret: mail_recipients
+        from_secret: email_recipients
       subject: "Drone build: [{{ build.status }}] {{ repo.name }} ({{ repo.branch }}) #{{ build.number }}"
       host: smtp.mailgun.org
       port: 587
       from: noreply@xdevops.cn
       username:
-        from_secret: mail_user
+        from_secret: email_user
       password:
-        from_secret: mail_password
+        from_secret: email_password
       when:
         status: [ success, failure ]
 
