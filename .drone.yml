@@ -14,8 +14,7 @@ steps:
     settings:
       recipients_only: true
       recipients:
-        - williamsrlin@outlook.com
-        - williamsrlin@outlook.com
+        from_secret: mail_recipients
       subject: "Drone build: [{{ build.status }}] {{ repo.name }} ({{ build.branch }}) #{{ build.number }}"
       host: smtp.mailgun.org
       port: 587
