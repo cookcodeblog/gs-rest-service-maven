@@ -12,7 +12,9 @@ steps:
     image: drillster/drone-email
     settings:
       recipients_only: true
-      recipients: [williamsrlin@outlook.com]
+      recipients:
+        - williamsrlin@outlook.com
+        - williamsrlin@outlook.com
       subject: News from Drone CI
       host: smtp.mailgun.org
       port: 587
