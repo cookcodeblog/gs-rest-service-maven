@@ -21,7 +21,7 @@ steps:
     settings:
       recipients_only: true
       recipients: [williamsrlin@outlook.com]
-      subject: [Drone CI] ${repo.name} build ${build.status}
+      subject: News from Drone CI
       host: smtp.mailgun.org
       port: 587
       from: drone@xdevops.cn
