@@ -16,7 +16,10 @@ steps:
       recipients:
         - williamsrlin@outlook.com
         - williamsrlin@outlook.com
-      subject: "Drone build ${build.status} for ${repo.name}"
+      subject: >
+        [{{ build.status }}]
+        {{ repo.owner }}/{{ repo.name }}
+        ({{ build.branch }} - {{ truncate build.commit 8 }})
       host: smtp.mailgun.org
       port: 587
       from: drone@xdevops.cn
