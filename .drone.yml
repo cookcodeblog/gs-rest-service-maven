@@ -9,6 +9,14 @@ volumes:
 
 
 steps:
+  - name: build
+    image: maven:3-jdk-8
+    volumes:
+      - name: maven_local_repo
+        path: /root/.m2
+    commands:
+      - mvn install -s settings.xml -B -U
+
   - name: email
     image: drillster/drone-email
     settings:
