@@ -15,3 +15,21 @@ steps:
         path: /root/.m2
     commands:
       - mvn install -s settings.xml -B -U
+
+  - name: email
+    image: drillster/drone-email
+    host:
+      - from_secret: SMPT_SERVER
+    username:
+      - from_secret: SMTP_USERNAME
+    password:
+      - from_secret: SMTP_PASSWOR
+    from:
+      - from_secret: EMAIL_FROM
+    recipients:
+      - from_secret: EMAIL_TO
+    recipients_only: true
+    when:
+      status: [ success, failure ]
+
+
