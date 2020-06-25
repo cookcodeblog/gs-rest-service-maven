@@ -20,15 +20,14 @@ steps:
     image: drillster/drone-email
     settings:
       recipients_only: true
-      recipients:
-        - williamsrlin@outlook.com
+      recipients: [williamsrlin@outlook.com]
       subject: [Drone CI] ${repo.name} build ${build.status}
       host: smtp.mailgun.org
       port: 587
       from: drone@xdevops.cn
       username:
-        - from_secret: SMTP_USERNAME
+        from_secret: SMTP_USERNAME
       password:
-        - from_secret: SMTP_PASSWOR
+        from_secret: SMTP_PASSWOR
       when:
         status: [ success, failure ]
