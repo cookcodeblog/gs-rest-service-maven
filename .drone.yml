@@ -17,19 +17,18 @@ steps:
       - mvn install -s settings.xml -B -U
 
   - name: email
-    image: drillster/drone-email
-    host:
-      - from_secret: SMPT_SERVER
-    username:
-      - from_secret: SMTP_USERNAME
-    password:
-      - from_secret: SMTP_PASSWOR
-    from:
-      - from_secret: EMAIL_FROM
-    recipients:
-      - from_secret: EMAIL_TO
-    recipients_only: true
-    when:
-      status: [ success, failure ]
-
-
+      image: drillster/drone-email
+      settings:
+        recipients_only: true
+        recipients:
+          from_secret: EMAIL_TO
+        subject: [Drone CI] ${repo.name} build ${build.status}
+        host: smtp.mailgun.org
+        port: 587
+        from: drone@xdevops.cn
+        username:
+          from_secret: SMTP_USERNAME
+        password:
+          from_secret: SMTP_PASSWOR
+        when:
+          status: [ success, failure ]
