@@ -16,7 +16,7 @@ steps:
       recipients:
         - williamsrlin@outlook.com
         - williamsrlin@outlook.com
-      subject: News from Drone CI
+      subject: "Drone build {build.status} for {repo.name}"
       host: smtp.mailgun.org
       port: 587
       from: drone@xdevops.cn
