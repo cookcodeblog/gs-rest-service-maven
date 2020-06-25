@@ -21,8 +21,8 @@ steps:
       port: 587
       from: drone@xdevops.cn
       username:
-        from_secret: SMTP_USERNAME
+        from_secret: mail_user
       password:
-        from_secret: SMTP_PASSWOR
+        from_secret: mail_password
       when:
         status: [ success, failure ]
